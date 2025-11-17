@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: История Казахстана (XIX–XX вв.)</title>
+    <style>
+        /* Общие стили и адаптивность */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 800px; /* Ограничение ширины для ПК */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Стиль для рамочки вопроса (как вы просили) */
+        .question-box {
+            border: 2px solid #007bff; /* Синяя рамка */
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            cursor: pointer; /* Указывает, что можно нажать */
+            background-color: #e9f5ff;
+            transition: background-color 0.3s;
+        }
+
+        .question-box:hover {
+            background-color: #d6eaff;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* Скрытие и показ вариантов ответа */
+        .options {
+            display: none; /* Скрыто по умолчанию */
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #aaa;
+        }
+
+        .options label {
+            display: block; /* Варианты на новой строке */
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .options label:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Кнопка проверки */
+        #submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #28a745; /* Зеленая кнопка */
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+
+        #submit-button:hover {
+            background-color: #218838;
+        }
+
+        /* Результаты */
+        #results {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #5cb85c;
+            background-color: #dff0d8;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            display: none;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            #submit-button {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🇰🇿 Тест: История Казахстана (XIX–XX вв.)</h1>
+
+        <form id="quiz-form">
+            <div class="question-box" onclick="toggleOptions('q1-options')">
+                <div class="question-text">
+                    1. Какое восстание в Западном Казахстане в 1836–1838 гг. возглавляли Исатай Тайманов и Махамбет Утемисов?
+                </div>
+                <div class="options" id="q1-options" data-answer="2">
+                    <label><input type="radio" name="q1" value="1"> Восстание Кенесары Касымова</label>
+                    <label><input type="radio" name="q1" value="2"> Восстание в Букеевской Орде</label>
+                    <label><input type="radio" name="q1" value="3"> Восстание Сырыма Датова</label>
+                    <label><input type="radio" name="q1" value="4"> Движение Амангельды Иманова</label>
+                </div>
+            </div>
+
+            <div class="question-box" onclick="toggleOptions('q2-options')">
+                <div class="question-text">
+                    2. В каком году было принято "Временное положение об управлении в Семиреченской и Сырдарьинской областях" (Туркестанское генерал-губернаторство)?
+                </div>
+                <div class="options" id="q2-options" data-answer="3">
+                    <label><input type="radio" name="q2" value="1"> 1867 г.</label>
+                    <label><input type="radio" name="q2" value="2"> 1886 г.</label>
+                    <label><input type="radio" name="q2" value="3"> 1867–1868 гг.</label>
+                    <label><input type="radio" name="q2" value="4"> 1854 г.</label>
+                </div>
+            </div>
+
+            <div class="question-box" onclick="toggleOptions('q3-options')">
+                <div class="question-text">
+                    3. Когда произошло общенациональное восстание 1916 года в Казахстане?
+                </div>
+                <div class="options" id="q3-options" data-answer="1">
+                    <label><input type="radio" name="q3" value="1"> Летом 1916 г. в ответ на царский указ о мобилизации</label>
+                    <label><input type="radio" name="q3" value="2"> В 1905 г. как часть Первой русской революции</label>
+                    <label><input type="radio" name="q3" value="3"> В 1920 г. против Советской власти</label>
+                    <label><input type="radio" name="q3" value="4"> Осенью 1917 г. после Октябрьской революции</label>
+                </div>
+            </div>
+            
+            <div class="question-box" onclick="toggleOptions('q4-options')">
+                <div class="question-text">
+                    4. Как называлось первое казахское национально-демократическое государство, провозглашенное в декабре 1917 года?
+                </div>
+                <div class="options" id="q4-options" data-answer="4">
+                    <label><input type="radio" name="q4" value="1"> Туркестанская автономия</label>
+                    <label><input type="radio" name="q4" value="2"> Казахская ССР</label>
+                    <label><input type="radio" name="q4" value="3"> Казахская АССР</label>
+                    <label><input type="radio" name="q4" value="4"> Алаш Орда</label>
+                </div>
+            </div>
+
+            <button type="button" id="submit-button" onclick="checkAnswers()">Проверить результаты</button>
+        </form>
+
+        <div id="results"></div>
+
+    </div>
+
+    <script>
+        // Функция для показа/скрытия вариантов ответа
+        function toggleOptions(optionsId) {
+            const optionsDiv = document.getElementById(optionsId);
+            // Переключаем свойство display
+            if (optionsDiv.style.display === 'block') {
+                optionsDiv.style.display = 'none';
+            } else {
+                optionsDiv.style.display = 'block';
+            }
+        }
+
+        // Логика проверки ответов
+        function checkAnswers() {
+            const form = document.getElementById('quiz-form');
+            const resultsDiv = document.getElementById('results');
+            const questions = document.querySelectorAll('.options');
+            let correctAnswers = 0;
+            let totalQuestions = questions.length;
+
+            questions.forEach(question => {
+                const correctAnswerValue = question.getAttribute('data-answer');
+                const radioName = question.id.replace('-options', ''); // 'q1', 'q2', и т.д.
+                
+                // Находим выбранный ответ в данной группе (name="qX")
+                const selectedOption = form.querySelector(`input[name="${radioName}"]:checked`);
+                
+                if (selectedOption) {
+                    // Сравниваем значение выбранного ответа с правильным
+                    if (selectedOption.value === correctAnswerValue) {
+                        correctAnswers++;
+                    }
+                }
+            });
+
+            // Выводим результат
+            resultsDiv.innerHTML = `✅ Вы правильно ответили на ${correctAnswers} из ${totalQuestions} вопросов.`;
+            resultsDiv.style.display = 'block'; // Показываем блок с результатом
+            
+            // Прокручиваем страницу к результатам на мобильных
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
