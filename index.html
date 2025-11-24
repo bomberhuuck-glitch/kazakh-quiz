@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тест: Есімдік (Местоимения)</title>
+    <title>Тест: «Қан мен тер» (Ә.Нұрпейісов)</title>
     <style>
         /* Общие стили и адаптивность */
         body {
@@ -30,35 +30,35 @@
 
         /* Стиль для рамочки вопроса (как вы просили) */
         .question-box {
-            border: 2px solid #007bff; /* Синяя рамка */
+            border: 2px solid #a74528; /* Темно-красная рамка для литературы */
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 6px;
-            cursor: pointer; /* Указывает, что можно нажать */
-            background-color: #e9f5ff;
+            cursor: pointer; 
+            background-color: #ffebe5;
             transition: background-color 0.3s;
         }
 
         .question-box:hover {
-            background-color: #d6eaff;
+            background-color: #ffd8cc;
         }
 
         .question-text {
             font-size: 1.1em;
             font-weight: bold;
-            color: #007bff;
+            color: #a74528;
         }
 
         /* Скрытие и показ вариантов ответа */
         .options {
-            display: none; /* Скрыто по умолчанию */
+            display: none; 
             margin-top: 15px;
             padding-top: 10px;
             border-top: 1px dashed #aaa;
         }
 
         .options label {
-            display: block; /* Варианты на новой строке */
+            display: block; 
             margin-bottom: 10px;
             cursor: pointer;
             padding: 5px;
@@ -77,7 +77,7 @@
             padding: 15px;
             font-size: 1.2em;
             color: #fff;
-            background-color: #28a745; /* Зеленая кнопка */
+            background-color: #28a745; 
             border: none;
             border-radius: 6px;
             cursor: pointer;
@@ -123,332 +123,187 @@
 <body>
 
     <div class="container">
-        <h1>🇰🇿 Тест: Есімдік (Местоимения)</h1>
+        <h1>🇰🇿 Тест: «Қан мен тер» (Ә.Нұрпейісов)</h1>
 
         <form id="quiz-form">
             
             <div class="question-box" onclick="toggleOptions('q1-options')">
                 <div class="question-text">
-                    1. Төмендегі сөзге тіркес бола алатын жіктеу есімдігін көрсетіңіз. ...бармадық.
+                    1. «Қан мен тер» шығармасы қандай жанрда жазылған?
                 </div>
-                <div class="options" id="q1-options" data-answer="1">
-                    <label><input type="radio" name="q1" value="1"> Оған.</label>
-                    <label><input type="radio" name="q1" value="2"> Театрға.</label>
-                    <label><input type="radio" name="q1" value="3"> Мектепке.</label>
-                    <label><input type="radio" name="q1" value="4"> Үйге.</label>
-                    <label><input type="radio" name="q1" value="5"> Қалаға.</label>
+                <div class="options" id="q1-options" data-answer="2">
+                    <label><input type="radio" name="q1" value="1"> Поэма</label>
+                    <label><input type="radio" name="q1" value="2"> Роман-трилогия</label>
+                    <label><input type="radio" name="q1" value="3"> Хикаят</label>
+                    <label><input type="radio" name="q1" value="4"> Әңгіме</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q2-options')">
                 <div class="question-text">
-                    2. Сұрау есімдігінің көпше түрін көрсетіңіз.
+                    2. «Қан мен тер» трилогиясы неше кітаптардан тұрады?
                 </div>
-                <div class="options" id="q2-options" data-answer="2">
-                    <label><input type="radio" name="q2" value="1"> Мыналар.</label>
-                    <label><input type="radio" name="q2" value="2"> Қандайларға.</label>
-                    <label><input type="radio" name="q2" value="3"> Біреулерге.</label>
-                    <label><input type="radio" name="q2" value="4"> Оларды.</label>
-                    <label><input type="radio" name="q2" value="5"> Солардан.</label>
+                <div class="options" id="q2-options" data-answer="3">
+                    <label><input type="radio" name="q2" value="1"> Екі кітап</label>
+                    <label><input type="radio" name="q2" value="2"> Төрт кітап</label>
+                    <label><input type="radio" name="q2" value="3"> Үш кітап</label>
+                    <label><input type="radio" name="q2" value="4"> Бір кітап</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q3-options')">
                 <div class="question-text">
-                    3. Есімдіктің түрін көрсетіңіз.
+                    3. Романдағы басты кейіпкер кім?
                 </div>
-                <div class="options" id="q3-options" data-answer="2">
-                    <label><input type="radio" name="q3" value="1"> Қатыстық.</label>
-                    <label><input type="radio" name="q3" value="2"> Сұрау.</label>
-                    <label><input type="radio" name="q3" value="3"> Көсемше.</label>
-                    <label><input type="radio" name="q3" value="4"> Есімше.</label>
-                    <label><input type="radio" name="q3" value="5"> Жинақтық.</label>
+                <div class="options" id="q3-options" data-answer="1">
+                    <label><input type="radio" name="q3" value="1"> Еламан</label>
+                    <label><input type="radio" name="q3" value="2"> Қален</label>
+                    <label><input type="radio" name="q3" value="3"> Тәңірберген</label>
+                    <label><input type="radio" name="q3" value="4"> Майрам</label>
                 </div>
             </div>
             
             <div class="question-box" onclick="toggleOptions('q4-options')">
                 <div class="question-text">
-                    4. Тиісті есімдікті қойыңыз: ... сабақ оқыдым.
+                    4. Романдағы басты әйел кейіпкерлердің бірі кім?
                 </div>
-                <div class="options" id="q4-options" data-answer="3">
-                    <label><input type="radio" name="q4" value="1"> Олар</label>
-                    <label><input type="radio" name="q4" value="2"> Ол</label>
-                    <label><input type="radio" name="q4" value="3"> Мен</label>
-                    <label><input type="radio" name="q4" value="4"> Біреу</label>
-                    <label><input type="radio" name="q4" value="5"> Кім?</label>
+                <div class="options" id="q4-options" data-answer="2">
+                    <label><input type="radio" name="q4" value="1"> Ақбала</label>
+                    <label><input type="radio" name="q4" value="2"> Күлайша</label>
+                    <label><input type="radio" name="q4" value="3"> Мескеумерген</label>
+                    <label><input type="radio" name="q4" value="4"> Хиуа</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q5-options')">
                 <div class="question-text">
-                    5. Сұрау мақсатында есімдіктің қай түрі қолданылатынын көрсетіңіз.
+                    5. Тәңірберген кімнің баласы?
                 </div>
-                <div class="options" id="q5-options" data-answer="1">
-                    <label><input type="radio" name="q5" value="1"> Сұрау.</label>
-                    <label><input type="radio" name="q5" value="2"> Болымсыздық.</label>
-                    <label><input type="radio" name="q5" value="3"> Жалпылау.</label>
-                    <label><input type="radio" name="q5" value="4"> Өздік.</label>
-                    <label><input type="radio" name="q5" value="5"> Сілтеу.</label>
+                <div class="options" id="q5-options" data-answer="3">
+                    <label><input type="radio" name="q5" value="1"> Қасым балықшы</label>
+                    <label><input type="radio" name="q5" value="2"> Мөңке би</label>
+                    <label><input type="radio" name="q5" value="3"> Шалбай бай</label>
+                    <label><input type="radio" name="q5" value="4"> Сәйім</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q6-options')">
                 <div class="question-text">
-                    6. Барыс септігінде тұрған өздік есімдігін табыңыз.
+                    6. Еламан мен Күлайшаның арасына от тастаған әйел кім?
                 </div>
-                <div class="options" id="q6-options" data-answer="3">
-                    <label><input type="radio" name="q6" value="1"> Кімге.</label>
-                    <label><input type="radio" name="q6" value="2"> Оған.</label>
-                    <label><input type="radio" name="q6" value="3"> Өзіңе.</label>
-                    <label><input type="radio" name="q6" value="4"> Бүкілінің.</label>
-                    <label><input type="radio" name="q6" value="5"> Емханаға.</label>
+                <div class="options" id="q6-options" data-answer="2">
+                    <label><input type="radio" name="q6" value="1"> Ақбала</label>
+                    <label><input type="radio" name="q6" value="2"> Хиуа</label>
+                    <label><input type="radio" name="q6" value="3"> Қаракөз</label>
+                    <label><input type="radio" name="q6" value="4"> Майрам</label>
                 </div>
             </div>
             
             <div class="question-box" onclick="toggleOptions('q7-options')">
                 <div class="question-text">
-                    7. Өздік есімдігі бар тіркесті табыңыз.
+                    7. Романдағы негізгі әлеуметтік мәселе қайсы?
                 </div>
-                <div class="options" id="q7-options" data-answer="2">
-                    <label><input type="radio" name="q7" value="1"> Бұл ел.</label>
-                    <label><input type="radio" name="q7" value="2"> Өз елім.</label>
-                    <label><input type="radio" name="q7" value="3"> Ел мен жер.</label>
-                    <label><input type="radio" name="q7" value="4"> Менің елім.</label>
-                    <label><input type="radio" name="q7" value="5"> Ел іші.</label>
+                <div class="options" id="q7-options" data-answer="3">
+                    <label><input type="radio" name="q7" value="1"> Қазақ-орыс соғысы</label>
+                    <label><input type="radio" name="q7" value="2"> Жер дауы</label>
+                    <label><input type="radio" name="q7" value="3"> Кедейлер мен байлар арасындағы тартыс (Әлеуметтік теңсіздік)</label>
+                    <label><input type="radio" name="q7" value="4"> Тіл мәселесі</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q8-options')">
                 <div class="question-text">
-                    8. Есімдікпен толықтырыңыз: ... кісі менің әкем.
+                    8. Трилогияда суреттелетін уақыт кезеңі?
                 </div>
                 <div class="options" id="q8-options" data-answer="2">
-                    <label><input type="radio" name="q8" value="1"> Күллі.</label>
-                    <label><input type="radio" name="q8" value="2"> Бұл.</label>
-                    <label><input type="radio" name="q8" value="3"> Қалай.</label>
-                    <label><input type="radio" name="q8" value="4"> Өзі.</label>
-                    <label><input type="radio" name="q8" value="5"> Сіз.</label>
+                    <label><input type="radio" name="q8" value="1"> XV ғасыр</label>
+                    <label><input type="radio" name="q8" value="2"> XX ғасыр басы</label>
+                    <label><input type="radio" name="q8" value="3"> XX ғасыр ортасы</label>
+                    <label><input type="radio" name="q8" value="4"> XIX ғасырдың соңғы жылдары</label>
                 </div>
             </div>
             
             <div class="question-box" onclick="toggleOptions('q9-options')">
                 <div class="question-text">
-                    9. Жатыс септігінде тұрған жіктеу есімдігін табыңыз.
+                    9. Романдағы балықшылар ортасындағы бас кейіпкердің қайшылыққа түсу себебі?
                 </div>
-                <div class="options" id="q9-options" data-answer="4">
-                    <label><input type="radio" name="q9" value="1"> Ол.</label>
-                    <label><input type="radio" name="q9" value="2"> Оны.</label>
-                    <label><input type="radio" name="q9" value="3"> Онан.</label>
-                    <label><input type="radio" name="q9" value="4"> Онда.</label>
-                    <label><input type="radio" name="q9" value="5"> Оған.</label>
+                <div class="options" id="q9-options" data-answer="3">
+                    <label><input type="radio" name="q9" value="1"> Байдың жерін иеленуі</label>
+                    <label><input type="radio" name="q9" value="2"> Тәңірбергенмен жанжалы</label>
+                    <label><input type="radio" name="q9" value="3"> Әлеуметтік теңсіздік</label>
+                    <label><input type="radio" name="q9" value="4"> Ағайындар арасындағы дау</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q10-options')">
                 <div class="question-text">
-                    10. I жақта қолданылатын жіктеу есімдігін көрсетіңіз.
+                    10. Еламан образы қандай типке жатады?
                 </div>
                 <div class="options" id="q10-options" data-answer="3">
-                    <label><input type="radio" name="q10" value="1"> Мен, сендер.</label>
-                    <label><input type="radio" name="q10" value="2"> Сен, біз.</label>
-                    <label><input type="radio" name="q10" value="3"> Мен, біз.</label>
-                    <label><input type="radio" name="q10" value="4"> Сіз, сендер.</label>
-                    <label><input type="radio" name="q10" value="5"> Ол, олар.</label>
+                    <label><input type="radio" name="q10" value="1"> Лирикалық кейіпкер</label>
+                    <label><input type="radio" name="q10" value="2"> Үмітсіз адам</label>
+                    <label><input type="radio" name="q10" value="3"> Қарапайым еңбек адамының типтік бейнесі</label>
+                    <label><input type="radio" name="q10" value="4"> Зұлым кейіпкер</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q11-options')">
                 <div class="question-text">
-                    11. Сілтеу есімдігін табыңыз.
+                    11. «Қарагөз» бөлімі кімнің атымен байланысты?
                 </div>
-                <div class="options" id="q11-options" data-answer="5">
-                    <label><input type="radio" name="q11" value="1"> Қайсы.</label>
-                    <label><input type="radio" name="q11" value="2"> Саған.</label>
-                    <label><input type="radio" name="q11" value="3"> Бүкіл.</label>
-                    <label><input type="radio" name="q11" value="4"> Әркім.</label>
-                    <label><input type="radio" name="q11" value="5"> Анау.</label>
+                <div class="options" id="q11-options" data-answer="3">
+                    <label><input type="radio" name="q11" value="1"> Ақбаламен</label>
+                    <label><input type="radio" name="q11" value="2"> Күлайшамен</label>
+                    <label><input type="radio" name="q11" value="3"> Еламанның алғашқы жары – Қарагөздің өлімімен</label>
+                    <label><input type="radio" name="q11" value="4"> Майрамның тағдырымен</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q12-options')">
                 <div class="question-text">
-                    12. Есімдігі бар тіркесті көрсетіңіз.
+                    12. Трилогия соңындағы негізгі идея:
                 </div>
-                <div class="options" id="q12-options" data-answer="4">
-                    <label><input type="radio" name="q12" value="1"> Кітап оқу.</label>
-                    <label><input type="radio" name="q12" value="2"> Тамақ іштім.</label>
-                    <label><input type="radio" name="q12" value="3"> Үйге келдім.</label>
-                    <label><input type="radio" name="q12" value="4"> Өз үйім.</label>
-                    <label><input type="radio" name="q12" value="5"> Доп ойнадым.</label>
+                <div class="options" id="q12-options" data-answer="3">
+                    <label><input type="radio" name="q12" value="1"> Байлыққа жету жолы</label>
+                    <label><input type="radio" name="q12" value="2"> Ел бірлігінің маңыздылығы</label>
+                    <label><input type="radio" name="q12" value="3"> Ескі қоғамның күйреуі</label>
+                    <label><input type="radio" name="q12" value="4"> Достық пен махаббат</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q13-options')">
                 <div class="question-text">
-                    13. Дұрыс тіркескен сөзді табыңыз.
+                    13. Шығармадағы жағымсыз кейіпкердің бірі:
                 </div>
-                <div class="options" id="q13-options" data-answer="3">
-                    <label><input type="radio" name="q13" value="1"> Менде кел.</label>
-                    <label><input type="radio" name="q13" value="2"> Мен кел.</label>
-                    <label><input type="radio" name="q13" value="3"> Маған кел.</label>
-                    <label><input type="radio" name="q13" value="4"> Менің кел.</label>
-                    <label><input type="radio" name="q13" value="5"> Мені кел.</label>
+                <div class="options" id="q13-options" data-answer="4">
+                    <label><input type="radio" name="q13" value="1"> Еламан</label>
+                    <label><input type="radio" name="q13" value="2"> Жалтыр</label>
+                    <label><input type="radio" name="q13" value="3"> Қален</label>
+                    <label><input type="radio" name="q13" value="4"> Шабдан</label>
                 </div>
             </div>
 
             <div class="question-box" onclick="toggleOptions('q14-options')">
                 <div class="question-text">
-                    14. Жіктеу есімдігін табыңыз.
+                    14. «Қан мен тер» авторы Ә.Нұрпейісов қай өңірдің тумасы?
                 </div>
                 <div class="options" id="q14-options" data-answer="2">
-                    <label><input type="radio" name="q14" value="1"> Өзім.</label>
-                    <label><input type="radio" name="q14" value="2"> Сен.</label>
-                    <label><input type="radio" name="q14" value="3"> Бұл.</label>
-                    <label><input type="radio" name="q14" value="4"> Біреу.</label>
-                    <label><input type="radio" name="q14" value="5"> Бәрі.</label>
+                    <label><input type="radio" name="q14" value="1"> Жетісу</label>
+                    <label><input type="radio" name="q14" value="2"> Сыр бойы</label>
+                    <label><input type="radio" name="q14" value="3"> Арқа</label>
+                    <label><input type="radio" name="q14" value="4"> Маңғыстау</label>
                 </div>
             </div>
             
             <div class="question-box" onclick="toggleOptions('q15-options')">
                 <div class="question-text">
-                    15. Еш сөзі арқылы жасалатын есімдіктің түрін табыңыз.
+                    15. Шығармадағы Қасым балықшы кімге қастық жасайды?
                 </div>
-                <div class="options" id="q15-options" data-answer="1">
-                    <label><input type="radio" name="q15" value="1"> Болымсыздық.</label>
-                    <label><input type="radio" name="q15" value="2"> Жалпылау.</label>
-                    <label><input type="radio" name="q15" value="3"> Сілтеу.</label>
-                    <label><input type="radio" name="q15" value="4"> Сұрау.</label>
-                    <label><input type="radio" name="q15" value="5"> Жіктеу.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q16-options')">
-                <div class="question-text">
-                    16. Тәуелденіп келген болымсыздық есімдігін көрсетіңіз.
-                </div>
-                <div class="options" id="q16-options" data-answer="3">
-                    <label><input type="radio" name="q16" value="1"> Осы.</label>
-                    <label><input type="radio" name="q16" value="2"> Туың.</label>
-                    <label><input type="radio" name="q16" value="3"> Ешкімім.</label>
-                    <label><input type="radio" name="q16" value="4"> Бәрі.</label>
-                    <label><input type="radio" name="q16" value="5"> Көзім.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q17-options')">
-                <div class="question-text">
-                    17. Сұрау есімдігін табыңыз.
-                </div>
-                <div class="options" id="q17-options" data-answer="5">
-                    <label><input type="radio" name="q17" value="1"> Бұл.</label>
-                    <label><input type="radio" name="q17" value="2"> Ол.</label>
-                    <label><input type="radio" name="q17" value="3"> Біз.</label>
-                    <label><input type="radio" name="q17" value="4"> Бәрі.</label>
-                    <label><input type="radio" name="q17" value="5"> Кім.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q18-options')">
-                <div class="question-text">
-                    18. Сұрау есімдігінің соңғы қосымшасы қандай? Қонақты сағат нешеге шақырдың?
-                </div>
-                <div class="options" id="q18-options" data-answer="3">
-                    <label><input type="radio" name="q18" value="1"> Көптік жалғау.</label>
-                    <label><input type="radio" name="q18" value="2"> Жұрнақ .</label>
-                    <label><input type="radio" name="q18" value="3"> Септік жалғау.</label>
-                    <label><input type="radio" name="q18" value="4"> Тәуелдік жалғау.</label>
-                    <label><input type="radio" name="q18" value="5"> Жіктік жалғау.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q19-options')">
-                <div class="question-text">
-                    19. Сұрау есімдіктерін көрсетіңіз.
-                </div>
-                <div class="options" id="q19-options" data-answer="1">
-                    <label><input type="radio" name="q19" value="1"> Қашан, қалай.</label>
-                    <label><input type="radio" name="q19" value="2"> Міне, әне.</label>
-                    <label><input type="radio" name="q19" value="3"> Бәрі, бүтін.</label>
-                    <label><input type="radio" name="q19" value="4"> Біздер, сіздер.</label>
-                    <label><input type="radio" name="q19" value="5"> Біреу, кейбіреу.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q20-options')">
-                <div class="question-text">
-                    20. Ілік септік тұлғасындағы сұрау есімдігін табыңыз.
-                </div>
-                <div class="options" id="q20-options" data-answer="1">
-                    <label><input type="radio" name="q20" value="1"> Нешеуінің?</label>
-                    <label><input type="radio" name="q20" value="2"> Қайсын?</label>
-                    <label><input type="radio" name="q20" value="3"> Кімсіздер?</label>
-                    <label><input type="radio" name="q20" value="4"> Неңіз?</label>
-                    <label><input type="radio" name="q20" value="5"> Кіміңіз?</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q21-options')">
-                <div class="question-text">
-                    21. Бастауыш қай сөз табынан екенін табыңыз. Жиналыста ешкім сөйлемеді.
-                </div>
-                <div class="options" id="q21-options" data-answer="1">
-                    <label><input type="radio" name="q21" value="1"> Есімдік.</label>
-                    <label><input type="radio" name="q21" value="2"> Етістік.</label>
-                    <label><input type="radio" name="q21" value="3"> Зат есім.</label>
-                    <label><input type="radio" name="q21" value="4"> Сын есім.</label>
-                    <label><input type="radio" name="q21" value="5"> Үстеу.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q22-options')">
-                <div class="question-text">
-                    22. Болымсыздық есімдігін белгілеңіз.
-                </div>
-                <div class="options" id="q22-options" data-answer="2">
-                    <label><input type="radio" name="q22" value="1"> Әрне, қайбір.</label>
-                    <label><input type="radio" name="q22" value="2"> Ешкім, ешқайсысы.</label>
-                    <label><input type="radio" name="q22" value="3"> Бірдеме, біреу.</label>
-                    <label><input type="radio" name="q22" value="4"> Өзің, өздері.</label>
-                    <label><input type="radio" name="q22" value="5"> Түгел, тегіс.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q23-options')">
-                <div class="question-text">
-                    23. Белгісіздік есімдіктерді анықтаңыз.
-                </div>
-                <div class="options" id="q23-options" data-answer="5">
-                    <label><input type="radio" name="q23" value="1"> Олар, бұлар.</label>
-                    <label><input type="radio" name="q23" value="2"> Менен, одан.</label>
-                    <label><input type="radio" name="q23" value="3"> Ешқашан, ешқайда.</label>
-                    <label><input type="radio" name="q23" value="4"> Мен, сен.</label>
-                    <label><input type="radio" name="q23" value="5"> Кейбіреуге, біреудің.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q24-options')">
-                <div class="question-text">
-                    24. Жіктеу есімдіктер қатарын табыңыз.
-                </div>
-                <div class="options" id="q24-options" data-answer="1">
-                    <label><input type="radio" name="q24" value="1"> Олар, сіздер.</label>
-                    <label><input type="radio" name="q24" value="2"> Бұл, сол.</label>
-                    <label><input type="radio" name="q24" value="3"> Бәрі, күллі.</label>
-                    <label><input type="radio" name="q24" value="4"> Біреу, әркім.</label>
-                    <label><input type="radio" name="q24" value="5"> Ешкім, еш адам.</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q25-options')">
-                <div class="question-text">
-                    25. Баяндауыш қай сөз табынан жасалғанын көрсетіңіз. Нағыз теңіз романтикасы деген осы.
-                </div>
-                <div class="options" id="q25-options" data-answer="3">
-                    <label><input type="radio" name="q25" value="1"> Зат есім.</label>
-                    <label><input type="radio" name="q25" value="2"> Одағай.</label>
-                    <label><input type="radio" name="q25" value="3"> Есімдік.</label>
-                    <label><input type="radio" name="q25" value="4"> Үстеу.</label>
-                    <label><input type="radio" name="q25" value="5"> Етістік.</label>
+                <div class="options" id="q15-options" data-answer="3">
+                    <label><input type="radio" name="q15" value="1"> Күлайшаға</label>
+                    <label><input type="radio" name="q15" value="2"> Хиуаға</label>
+                    <label><input type="radio" name="q15" value="3"> Еламанға</label>
+                    <label><input type="radio" name="q15" value="4"> Тәңірбергенге</label>
                 </div>
             </div>
 
@@ -464,7 +319,6 @@
         // Функция для показа/скрытия вариантов ответа
         function toggleOptions(optionsId) {
             const optionsDiv = document.getElementById(optionsId);
-            // Переключаем свойство display
             if (optionsDiv.style.display === 'block') {
                 optionsDiv.style.display = 'none';
             } else {
@@ -476,8 +330,7 @@
         function checkAnswers() {
             const form = document.getElementById('quiz-form');
             const resultsDiv = document.getElementById('results');
-            // Обновление: Теперь у нас 25 вопросов
-            const totalQuestions = 25; 
+            const totalQuestions = 15; // Общее количество вопросов
             let correctAnswers = 0;
 
             for (let i = 1; i <= totalQuestions; i++) {
@@ -496,10 +349,10 @@
             }
 
             // Выводим результат
-            resultsDiv.innerHTML = `✅ Вы правильно ответили на ${correctAnswers} из ${totalQuestions} вопросов.`;
-            resultsDiv.style.display = 'block'; // Показываем блок с результатом
+            resultsDiv.innerHTML = `✅ Сіз дұрыс жауап бердіңіз: ${correctAnswers} сұрақтан ${totalQuestions} сұрақ.`;
+            resultsDiv.style.display = 'block'; 
             
-            // Прокручиваем страницу к результатам на мобильных
+            // Прокручиваем страницу к результатам
             resultsDiv.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
