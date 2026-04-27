@@ -3,359 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тест: «Қан мен тер» (Ә.Нұрпейісов)</title>
+    <title>Интерактивная карта Южного Казахстана</title>
     <style>
-        /* Общие стили и адаптивность */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f4e9d5; }
+        
+        .map-container {
+            position: relative;
+            width: 1000px; /* Можно настроить под размер картинки */
+            height: 550px;
+            background-image: url('Снимок экрана 2026-04-28 012935.jpg'); /* Убедись, что файл в той же папке */
+            background-size: cover;
+            border: 5px solid #8b5e3c;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .container {
-            max-width: 800px; /* Ограничение ширины для ПК */
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-        }
-
-        /* Стиль для рамочки вопроса (как вы просили) */
-        .question-box {
-            border: 2px solid #a74528; /* Темно-красная рамка для литературы */
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 6px;
-            cursor: pointer; 
-            background-color: #ffebe5;
-            transition: background-color 0.3s;
-        }
-
-        .question-box:hover {
-            background-color: #ffd8cc;
-        }
-
-        .question-text {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #a74528;
-        }
-
-        /* Скрытие и показ вариантов ответа */
-        .options {
-            display: none; 
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px dashed #aaa;
-        }
-
-        .options label {
-            display: block; 
-            margin-bottom: 10px;
+        /* Стиль меток на карте */
+        .pin {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 0, 0, 0.3); /* Делаем области заметными для теста, потом можно сделать 0 */
+            border-radius: 50%;
             cursor: pointer;
-            padding: 5px;
-            border-radius: 4px;
-            transition: background-color 0.2s;
+            border: 2px solid gold;
+            transition: transform 0.2s;
         }
+        .pin:hover { transform: scale(1.3); background-color: rgba(255, 215, 0, 0.5); }
 
-        .options label:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Кнопка проверки */
-        #submit-button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            font-size: 1.2em;
-            color: #fff;
-            background-color: #28a745; 
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: background-color 0.3s;
-        }
-
-        #submit-button:hover {
-            background-color: #218838;
-        }
-
-        /* Результаты */
-        #results {
+        /* Окно с информацией */
+        #info-panel {
             margin-top: 20px;
-            padding: 15px;
-            border: 2px solid #5cb85c;
-            background-color: #dff0d8;
-            border-radius: 6px;
-            text-align: center;
-            font-size: 1.3em;
-            font-weight: bold;
-            display: none;
-        }
-
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 1.5em;
-            }
-            #submit-button {
-                font-size: 1em;
-                padding: 12px;
-            }
+            width: 600px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            border-left: 10px solid #8b5e3c;
+            display: none; /* Скрыто, пока не нажали на точку */
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>🇰🇿 Тест: «Қан мен тер» (Ә.Нұрпейісов)</h1>
+    <h1>Сакральные места Южного Казахстана</h1>
 
-        <form id="quiz-form">
-            
-            <div class="question-box" onclick="toggleOptions('q1-options')">
-                <div class="question-text">
-                    1. «Қан мен тер» шығармасы қандай жанрда жазылған?
-                </div>
-                <div class="options" id="q1-options" data-answer="2">
-                    <label><input type="radio" name="q1" value="1"> Поэма</label>
-                    <label><input type="radio" name="q1" value="2"> Роман-трилогия</label>
-                    <label><input type="radio" name="q1" value="3"> Хикаят</label>
-                    <label><input type="radio" name="q1" value="4"> Әңгіме</label>
-                </div>
-            </div>
+    <div class="map-container">
+        <div class="pin" style="top: 52%; left: 32%;" onclick="showInfo('sayram')"></div>
+        <div class="pin" style="top: 42%; left: 38%;" onclick="showInfo('arystan')"></div>
+        <div class="pin" style="top: 48%; left: 49%;" onclick="showInfo('turkestan')"></div>
+        <div class="pin" style="top: 73%; left: 42%;" onclick="showInfo('sauran')"></div>
+        <div class="pin" style="top: 68%; left: 63%;" onclick="showInfo('appak')"></div>
+        <div class="pin" style="top: 48%; left: 75%;" onclick="showInfo('akmechet')"></div>
+    </div>
 
-            <div class="question-box" onclick="toggleOptions('q2-options')">
-                <div class="question-text">
-                    2. «Қан мен тер» трилогиясы неше кітаптардан тұрады?
-                </div>
-                <div class="options" id="q2-options" data-answer="3">
-                    <label><input type="radio" name="q2" value="1"> Екі кітап</label>
-                    <label><input type="radio" name="q2" value="2"> Төрт кітап</label>
-                    <label><input type="radio" name="q2" value="3"> Үш кітап</label>
-                    <label><input type="radio" name="q2" value="4"> Бір кітап</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q3-options')">
-                <div class="question-text">
-                    3. Романдағы басты кейіпкер кім?
-                </div>
-                <div class="options" id="q3-options" data-answer="1">
-                    <label><input type="radio" name="q3" value="1"> Еламан</label>
-                    <label><input type="radio" name="q3" value="2"> Қален</label>
-                    <label><input type="radio" name="q3" value="3"> Тәңірберген</label>
-                    <label><input type="radio" name="q3" value="4"> Майрам</label>
-                </div>
-            </div>
-            
-            <div class="question-box" onclick="toggleOptions('q4-options')">
-                <div class="question-text">
-                    4. Романдағы басты әйел кейіпкерлердің бірі кім?
-                </div>
-                <div class="options" id="q4-options" data-answer="2">
-                    <label><input type="radio" name="q4" value="1"> Ақбала</label>
-                    <label><input type="radio" name="q4" value="2"> Күлайша</label>
-                    <label><input type="radio" name="q4" value="3"> Мескеумерген</label>
-                    <label><input type="radio" name="q4" value="4"> Хиуа</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q5-options')">
-                <div class="question-text">
-                    5. Тәңірберген кімнің баласы?
-                </div>
-                <div class="options" id="q5-options" data-answer="3">
-                    <label><input type="radio" name="q5" value="1"> Қасым балықшы</label>
-                    <label><input type="radio" name="q5" value="2"> Мөңке би</label>
-                    <label><input type="radio" name="q5" value="3"> Шалбай бай</label>
-                    <label><input type="radio" name="q5" value="4"> Сәйім</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q6-options')">
-                <div class="question-text">
-                    6. Еламан мен Күлайшаның арасына от тастаған әйел кім?
-                </div>
-                <div class="options" id="q6-options" data-answer="2">
-                    <label><input type="radio" name="q6" value="1"> Ақбала</label>
-                    <label><input type="radio" name="q6" value="2"> Хиуа</label>
-                    <label><input type="radio" name="q6" value="3"> Қаракөз</label>
-                    <label><input type="radio" name="q6" value="4"> Майрам</label>
-                </div>
-            </div>
-            
-            <div class="question-box" onclick="toggleOptions('q7-options')">
-                <div class="question-text">
-                    7. Романдағы негізгі әлеуметтік мәселе қайсы?
-                </div>
-                <div class="options" id="q7-options" data-answer="3">
-                    <label><input type="radio" name="q7" value="1"> Қазақ-орыс соғысы</label>
-                    <label><input type="radio" name="q7" value="2"> Жер дауы</label>
-                    <label><input type="radio" name="q7" value="3"> Кедейлер мен байлар арасындағы тартыс (Әлеуметтік теңсіздік)</label>
-                    <label><input type="radio" name="q7" value="4"> Тіл мәселесі</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q8-options')">
-                <div class="question-text">
-                    8. Трилогияда суреттелетін уақыт кезеңі?
-                </div>
-                <div class="options" id="q8-options" data-answer="2">
-                    <label><input type="radio" name="q8" value="1"> XV ғасыр</label>
-                    <label><input type="radio" name="q8" value="2"> XX ғасыр басы</label>
-                    <label><input type="radio" name="q8" value="3"> XX ғасыр ортасы</label>
-                    <label><input type="radio" name="q8" value="4"> XIX ғасырдың соңғы жылдары</label>
-                </div>
-            </div>
-            
-            <div class="question-box" onclick="toggleOptions('q9-options')">
-                <div class="question-text">
-                    9. Романдағы балықшылар ортасындағы бас кейіпкердің қайшылыққа түсу себебі?
-                </div>
-                <div class="options" id="q9-options" data-answer="3">
-                    <label><input type="radio" name="q9" value="1"> Байдың жерін иеленуі</label>
-                    <label><input type="radio" name="q9" value="2"> Тәңірбергенмен жанжалы</label>
-                    <label><input type="radio" name="q9" value="3"> Әлеуметтік теңсіздік</label>
-                    <label><input type="radio" name="q9" value="4"> Ағайындар арасындағы дау</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q10-options')">
-                <div class="question-text">
-                    10. Еламан образы қандай типке жатады?
-                </div>
-                <div class="options" id="q10-options" data-answer="3">
-                    <label><input type="radio" name="q10" value="1"> Лирикалық кейіпкер</label>
-                    <label><input type="radio" name="q10" value="2"> Үмітсіз адам</label>
-                    <label><input type="radio" name="q10" value="3"> Қарапайым еңбек адамының типтік бейнесі</label>
-                    <label><input type="radio" name="q10" value="4"> Зұлым кейіпкер</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q11-options')">
-                <div class="question-text">
-                    11. «Қарагөз» бөлімі кімнің атымен байланысты?
-                </div>
-                <div class="options" id="q11-options" data-answer="3">
-                    <label><input type="radio" name="q11" value="1"> Ақбаламен</label>
-                    <label><input type="radio" name="q11" value="2"> Күлайшамен</label>
-                    <label><input type="radio" name="q11" value="3"> Еламанның алғашқы жары – Қарагөздің өлімімен</label>
-                    <label><input type="radio" name="q11" value="4"> Майрамның тағдырымен</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q12-options')">
-                <div class="question-text">
-                    12. Трилогия соңындағы негізгі идея:
-                </div>
-                <div class="options" id="q12-options" data-answer="3">
-                    <label><input type="radio" name="q12" value="1"> Байлыққа жету жолы</label>
-                    <label><input type="radio" name="q12" value="2"> Ел бірлігінің маңыздылығы</label>
-                    <label><input type="radio" name="q12" value="3"> Ескі қоғамның күйреуі</label>
-                    <label><input type="radio" name="q12" value="4"> Достық пен махаббат</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q13-options')">
-                <div class="question-text">
-                    13. Шығармадағы жағымсыз кейіпкердің бірі:
-                </div>
-                <div class="options" id="q13-options" data-answer="4">
-                    <label><input type="radio" name="q13" value="1"> Еламан</label>
-                    <label><input type="radio" name="q13" value="2"> Жалтыр</label>
-                    <label><input type="radio" name="q13" value="3"> Қален</label>
-                    <label><input type="radio" name="q13" value="4"> Шабдан</label>
-                </div>
-            </div>
-
-            <div class="question-box" onclick="toggleOptions('q14-options')">
-                <div class="question-text">
-                    14. «Қан мен тер» авторы Ә.Нұрпейісов қай өңірдің тумасы?
-                </div>
-                <div class="options" id="q14-options" data-answer="2">
-                    <label><input type="radio" name="q14" value="1"> Жетісу</label>
-                    <label><input type="radio" name="q14" value="2"> Сыр бойы</label>
-                    <label><input type="radio" name="q14" value="3"> Арқа</label>
-                    <label><input type="radio" name="q14" value="4"> Маңғыстау</label>
-                </div>
-            </div>
-            
-            <div class="question-box" onclick="toggleOptions('q15-options')">
-                <div class="question-text">
-                    15. Шығармадағы Қасым балықшы кімге қастық жасайды?
-                </div>
-                <div class="options" id="q15-options" data-answer="3">
-                    <label><input type="radio" name="q15" value="1"> Күлайшаға</label>
-                    <label><input type="radio" name="q15" value="2"> Хиуаға</label>
-                    <label><input type="radio" name="q15" value="3"> Еламанға</label>
-                    <label><input type="radio" name="q15" value="4"> Тәңірбергенге</label>
-                </div>
-            </div>
-
-
-            <button type="button" id="submit-button" onclick="checkAnswers()">Проверить результаты</button>
-        </form>
-
-        <div id="results"></div>
-
+    <div id="info-panel">
+        <h2 id="title"></h2>
+        <p id="description"></p>
     </div>
 
     <script>
-        // Функция для показа/скрытия вариантов ответа
-        function toggleOptions(optionsId) {
-            const optionsDiv = document.getElementById(optionsId);
-            if (optionsDiv.style.display === 'block') {
-                optionsDiv.style.display = 'none';
-            } else {
-                optionsDiv.style.display = 'block';
+        const data = {
+            sayram: {
+                title: "Сайрам (Испиджаб)",
+                description: "Один из древнейших городов Казахстана. В нем находятся мавзолеи Ибрагим-ата и Карашаш-ана (родителей Ходжи Ахмеда Яссави)."
+            },
+            arystan: {
+                title: "Мавзолей Арыстан-Баб",
+                description: "Важная мусульманская святыня. Арыстан-Баб был духовным наставником Ходжи Ахмеда Яссави. По легенде, именно ему передали аманат (четки) пророка."
+            },
+            turkestan: {
+                title: "Туркестан",
+                description: "Священный город, духовный центр тюркского мира. Главная достопримечательность — мавзолей Ходжи Ахмеда Яссави, шедевр средневекового зодчества."
+            },
+            sauran: {
+                title: "Древний Сауран",
+                description: "Крупный средневековый город-крепость. Известен своими уникальными подземными каналами (кяризами) и как важный торговый узел на Шелковом пути."
+            },
+            appak: {
+                title: "Мечеть Аппак Ишан",
+                description: "Архитектурный памятник XIX века, построенный без единого гвоздя. Уникальный образец деревянного зодчества в Южном Казахстане."
+            },
+            akmechet: {
+                title: "Пещера Акмечеть",
+                description: "Огромная пещера в Байдибекском районе. Внутри свой микроклимат и даже растут деревья. Овеяна множеством легенд о защитниках казахской степи."
             }
-        }
+        };
 
-        // Логика проверки ответов
-        function checkAnswers() {
-            const form = document.getElementById('quiz-form');
-            const resultsDiv = document.getElementById('results');
-            const totalQuestions = 15; // Общее количество вопросов
-            let correctAnswers = 0;
-
-            for (let i = 1; i <= totalQuestions; i++) {
-                const questionId = `q${i}-options`;
-                const radioName = `q${i}`;
-                const questionElement = document.getElementById(questionId);
-
-                if (questionElement) {
-                    const correctAnswerValue = questionElement.getAttribute('data-answer');
-                    const selectedOption = form.querySelector(`input[name="${radioName}"]:checked`);
-                    
-                    if (selectedOption && selectedOption.value === correctAnswerValue) {
-                        correctAnswers++;
-                    }
-                }
-            }
-
-            // Выводим результат
-            resultsDiv.innerHTML = `✅ Сіз дұрыс жауап бердіңіз: ${correctAnswers} сұрақтан ${totalQuestions} сұрақ.`;
-            resultsDiv.style.display = 'block'; 
-            
-            // Прокручиваем страницу к результатам
-            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        function showInfo(id) {
+            const panel = document.getElementById('info-panel');
+            document.getElementById('title').innerText = data[id].title;
+            document.getElementById('description').innerText = data[id].description;
+            panel.style.display = 'block';
         }
     </script>
-
 </body>
 </html>
