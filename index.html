@@ -9,28 +9,37 @@
         
         .map-container {
             position: relative;
-            width: 1000px; /* Можно настроить под размер картинки */
+            width: 1000px; 
             height: 550px;
-            background-image: url('map.jpg'); /* Убедись, что файл в той же папке */
+            background-image: url('map.jpg'); 
             background-size: cover;
             border: 5px solid #8b5e3c;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* Стиль меток на карте */
+        /* Обновленный стиль меток */
         .pin {
             position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(255, 0, 0, 0.3); /* Делаем области заметными для теста, потом можно сделать 0 */
+            width: 60px; /* Было 30px, стало 60px (в 2 раза больше) */
+            height: 60px; /* Было 30px, стало 60px */
+            background-color: transparent; /* Полностью прозрачный фон */
             border-radius: 50%;
             cursor: pointer;
-            border: 2px solid gold;
-            transition: transform 0.2s;
+            border: none; /* Убрали золотую рамку для прозрачности */
+            
+            /* Центрируем точку относительно координат */
+            transform: translate(-50%, -50%); 
+            transition: transform 0.2s, background-color 0.2s;
+            
+            /* Опционально: можно оставить слабую подсветку при наведении, 
+               чтобы пользователь понимал, что нажал */
         }
-        .pin:hover { transform: scale(1.3); background-color: rgba(255, 215, 0, 0.5); }
 
-        /* Окно с информацией */
+        .pin:hover { 
+            transform: translate(-50%, -50%) scale(1.1); 
+            background-color: rgba(255, 215, 0, 0.2); /* Едва заметный блик при наведении */
+        }
+
         #info-panel {
             margin-top: 20px;
             width: 600px;
@@ -38,7 +47,7 @@
             background: #fff;
             border-radius: 10px;
             border-left: 10px solid #8b5e3c;
-            display: none; /* Скрыто, пока не нажали на точку */
+            display: none;
         }
     </style>
 </head>
