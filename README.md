@@ -1,1 +1,1 @@
-# kazakh-quiz
+# kazakh-map
